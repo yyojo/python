@@ -6,8 +6,8 @@
 ---
 ### Arithmetic Operators
 
-* + Addition
-* - Subtraction
+* '+' Addition
+* '-' Subtraction
 * * Multiplication
 * / Division
 * % Mod (the remainder after dividing)
