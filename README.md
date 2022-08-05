@@ -8,10 +8,10 @@
 
 *  **+** Addition
 *  **-** Subtraction
-*  ** * ** Multiplication
+*  *  Multiplication
 *  **/** Division
 *  **%** Mod (the remainder after dividing)
-*  ** ** ** Exponentiation (note that ^ does not do this operation, as you might have seen in other languages)
+*  **  Exponentiation (note that ^ does not do this operation, as you might have seen in other languages)
 *  **//** Divides and rounds down to the nearest integer
 
 ```py
