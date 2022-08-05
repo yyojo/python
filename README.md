@@ -79,7 +79,17 @@ False
 ```
 
 ### Booleans, Comparison Operators and Logical Operators
-The bool data type holds one of the values True or False, which are often encoded as 1 or 0, respectively.
+The bool data type holds one of the values **True** or **False**, which are often encoded as **1** or **0**, respectively.
 
-There are 6 comparison operators that are common to see in order to obtain a bool value:
+There are 6 comparison operators that are common to see in order to obtain a **bool** value:
+
+Comparison Operators:
+
+<img width="493" alt="Screen Shot 2022-08-05 at 10 15 44 PM" src="https://user-images.githubusercontent.com/109002901/183145762-518e74f8-4caa-4387-a4cd-55400b19dfef.png">
+
+And there are three logical operators you need to be familiar with:
+
+<img width="691" alt="Screen Shot 2022-08-05 at 10 16 27 PM" src="https://user-images.githubusercontent.com/109002901/183145883-fb890843-467d-4363-bc49-c83e9b8a58b2.png">
+
+
 
