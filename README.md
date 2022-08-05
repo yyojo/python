@@ -140,6 +140,12 @@ HelloHelloHelloHelloHello
 
 5
 ```
+### String Methods and Functions
+A method in Python behaves similarly to a function. Methods actually are functions that are called using dot notation. For example, **lower()** is a string method that can be used like this, on a string called "sample string": sample_string.lower().
+
+Methods are specific to the data type for a particular variable. So there are some built-in methods that are available for all strings, different methods that are available for all integers, etc.
+
+<img width="814" alt="Screen Shot 2022-08-05 at 10 40 32 PM" src="https://user-images.githubusercontent.com/109002901/183149188-99417b08-d4cb-4542-91bd-3af87e9d20e3.png">
 
 **len()** is a built-in Python function that returns the length of an object, like a string. The length of a string is the number of characters in the string. This will always be an integer.
 
@@ -150,6 +156,30 @@ print(len("ababa") / len("ab"))
 2.5
 ```
 
+We will be using the **format()** string method a good bit in our future work in Python, and you will find it very valuable in your coding, especially with your print statements.
+
+We can best illustrate how to use format() by looking at some examples.
+
+```py
+print("Mohammed has {} balloons".format(27))
+# output: Mohammed has 27 balloons
+
+animal = "dog"
+action = "bite"
+print("Does your {} {}?".format(animal, action))
+# output: Does your dog bite?
+
+maria_string = "Maria loves {} and {}"
+print(maria_string.format("math", "statistics"))
+output: Maria loves math and statistics
+```
+
+A helpful string method when working with strings is the **.split()** method. This function or method returns a data container called a list that contains the words from the input string. We will be introducing you to the concept of lists in the next video.
+
+The split method has two additional arguments (sep and maxsplit). The sep argument stands for "separator". It can be used to identify how the string should be split up (e.g., whitespace characters like space, tab, return, newline; specific punctuation (e.g., comma, dashes)). If the sep argument is not provided, the default separator is whitespace.
+
+True to its name, the maxsplit argument provides the maximum number of splits. The argument gives maxsplit + 1 number of elements in the new list, with the remaining string being returned as the last element in the list. 
+
 ### Type and Type Conversion
 You have seen four data types so far:
 
@@ -159,3 +189,44 @@ You have seen four data types so far:
 * string
 
 The function **type()** can be used to check the data type of any variable you are working with. To convert a variable type to certian type: **type_name(variable)**
+
+### Debugging Code
+Everyone gets "bugs," or unexpected errors, in their code, and this is a normal and expected part of software development. We all say at one time or another, "Why isn't this computer doing what I want it to do?!"
+
+So an important part of coding is "debugging" your code, to remove these bugs. This can often take a long time, and cause you frustration, but developing effective coding habits and mental calmness will help you address these issues. With determined persistence, you can prevail over these bugs!
+
+Here are some tips on successful debugging that we'll discuss in more detail below:
+
+Understand common error messages you might receive and what to do about them.
+Search for your error message, using the Web community.
+Use print statements.
+
+Understanding Common Error Messages
+There are many different error messages that you can receive in Python, and learning how to interpret what they're telling you can be very helpful. Here are some common ones for starters:
+
+* "ZeroDivisionError: division by zero." This is an error message that you saw earlier in this lesson. What did this error message indicate to us? You can look back in the Quiz: Arithmetic Operators section to review it if needed.
+* "SyntaxError: unexpected EOF while parsing" This message is often produced when you have accidentally left out something, like a parenthesis. The message is saying it has unexpectedly reached the end of file ("EOF") and it still didn't find that right parenthesis. This can easily happen with code syntax involving pairs, like beginning and ending quotes also. Take a look at the two lines of code below. Executing these lines produces this syntax error message:
+
+```py
+greeting = "hello"
+print(greeting.upper
+```
+
+* "TypeError: len() takes exactly one argument (0 given)" This kind of message could be given for many functions, like len in this case, if I accidentally do not include the required number of arguments when I'm calling a function, as below. This message tells me how many arguments the function requires (one in this case), compared with how many I gave it (0). I meant to use len(chars) to count the number of characters in this long word, but I forgot the argument.
+
+```py
+chars = "supercalifragilisticexpialidocious"
+len()
+```
+
+**Search for Your Error Message**
+Software developers like to share their problems and solutions with each other on the web, so using Google search, or searching in StackOverflow, or searching in Udacity's Knowledge forum are all good ways to get ideas on how to address a particular error message you're getting.
+
+Copy and paste the error message into your web browser search tab, or in Knowledge, and see what others suggest about what might be causing it.
+You can copy and paste the whole error message, with or without quotes around it.
+Or you can search using just key words from the error message or situation you're facing, along with some other helpful words that describe your context, like Python and Mac.
+
+**Use Print Statements to Help Debugging**
+Adding print statements temporarily into your code can help you see which code lines have been executed before the error occurs, and see the values of any variables that might be important. This approach to debugging can also be helpful even if you're not receiving an error message, but things just aren't working the way you want.
+
+We'll suggest particular occasions to use this approach in upcoming helpful places in this course.
