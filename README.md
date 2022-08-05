@@ -91,5 +91,71 @@ And there are three logical operators you need to be familiar with:
 
 <img width="691" alt="Screen Shot 2022-08-05 at 10 16 27 PM" src="https://user-images.githubusercontent.com/109002901/183145883-fb890843-467d-4363-bc49-c83e9b8a58b2.png">
 
+### Strings
+Strings in Python are shown as the variable type **str**. You can define a string with either double quotes " or single quotes '. If the string you are creating actually has one of these two values in it, then you need to be careful to assure your code doesn't give an error.
 
+```py
+>>> my_string = 'this is a string!'
+>>> my_string = "this is also a string!"
+```
 
+You can also include a \ in your string to be able to include one of these quotes:
+
+```py
+>>> this_string = 'Simon\'s skateboard is in the garage.'
+>>> print(this_string) # Simon's skateboard is in the garage.
+```
+
+If we don't use this, notice we get the following error:
+
+```py
+>>> this_string = 'Simon's skateboard is in the garage.'
+
+/* 
+ File "<ipython-input-20-e80562c2a290>", line 1
+    this_string = 'Simon's skateboard is in the garage.'
+                         ^
+SyntaxError: invalid syntax
+*/
+```
+
+There are a number of other operations you can use with strings as well. 
+
+```py
+>>> first_word = 'Hello'
+>>> second_word = 'There'
+>>> print(first_word + second_word)
+
+HelloThere
+
+>>> print(first_word + ' ' + second_word)
+
+Hello There
+
+>>> print(first_word * 5)
+
+HelloHelloHelloHelloHello
+
+>>> print(len(first_word))
+
+5
+```
+
+**len()** is a built-in Python function that returns the length of an object, like a string. The length of a string is the number of characters in the string. This will always be an integer.
+
+There is an example above, but here's another one:
+
+```py
+print(len("ababa") / len("ab"))
+2.5
+```
+
+### Type and Type Conversion
+You have seen four data types so far:
+
+* int
+* float
+* bool
+* string
+
+The function **type()** can be used to check the data type of any variable you are working with. To convert a variable type to certian type: **type_name(variable)**
