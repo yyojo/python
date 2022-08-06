@@ -1244,7 +1244,8 @@ Constructors are generally used for instantiating an object. The task of constru
 Syntax of constructor declaration : 
 
 ```py
-def __init__(self):
+# # parameterized constructor
+def __init__(self, a, b): 
     # body of the constructor
 ```
 
@@ -1269,7 +1270,7 @@ Note : A reference to objects is also deleted when the object goes out of refere
 
 Note : The destructor was called after the program ended or when all the references to object are deleted i.e when the reference count becomes zero, not when object went out of scope.
 
-
+Therefore, if your instances are involved in circular references they will live in memory for as long as the application run.
 
 
 
