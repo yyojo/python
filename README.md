@@ -698,3 +698,151 @@ for i, letter in enumerate(letters):
 3 d
 4 e */
 ```
+
+### List Comprehensions
+In Python, you can create lists really quickly and concisely with list comprehensions. This example from earlier:
+
+```py
+some_list = [('a', 1), ('b', 2), ('c', 3)]
+letters, nums = zip(*some_list)
+```
+
+can be reduced to:
+
+```py
+capitalized_cities = [city.title() for city in cities]
+```
+
+List comprehensions allow us to create a list using a for loop in one step.
+
+You create a list comprehension with brackets [], including an expression to evaluate for each element in an iterable. This list comprehension above calls city.title() for each element city in cities, to create each element in the new list, capitalized_cities.
+
+**Conditionals in List Comprehensions**
+
+You can also add conditionals to list comprehensions (listcomps). After the iterable, you can use the **if** keyword to check a condition in each iteration.
+
+```py
+squares = [x**2 for x in range(9) if x % 2 == 0] # = [0,4,16,36,64]
+```
+
+If you would like to add else, you have to move the conditionals to the beginning of the listcomp, right after the expression, like this.
+
+```py
+squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
+```
+
+## Functions
+----
+### Defining Functions
+
+**Function Header**
+
+Let's start with the function header, which is the first line of a function definition.
+1. The function header always starts with the **def** keyword, which indicates that this is a function definition.
+2. Then comes the function name (here, cylinder_volume), which follows the same naming conventions as variables. You can revisit the naming conventions below.
+3. Immediately after the name are parentheses that may include arguments separated by commas (here, height and radius). Arguments, or parameters, are values that are passed in as inputs when the function is called, and are used in the function body. If a function doesn't take arguments, these parentheses are left empty.
+4. The header always end with a colon **:**.
+
+**Function Body**
+
+The rest of the function is contained in the body, which is where the function does its work.
+
+1. The body of a function is the code indented after the header line. Here, it's the two lines that define pi and return the volume.
+2. Within this body, we can refer to the argument variables and define new variables, which can only be used within these indented lines.
+3. The body will often include a return statement, which is used to send back an output value from the function to the statement that called the function. A return statement consists of the return keyword followed by an expression that is evaluated to get the output value for the function. If there is no return statement, the function simply returns None.
+
+Below, you'll find a code editor where you can experiment with this.
+
+**Naming Conventions for Functions**
+Function names follow the same naming conventions as variables.
+
+1. Only use ordinary letters, numbers and underscores in your function names. They can’t have spaces, and need to start with a letter or underscore.
+2. You can’t use Python's reserved words or keywords for function names, as discussed earlier with variable names. Here again is that table of Python's reserved words.
+3. Try to use descriptive names that can help readers understand what the function does.
+
+**Default Arguments**
+
+We can add default arguments in a function to have default values for parameters that are unspecified in a function call.
+
+```py
+def cylinder_volume(height, radius=5):
+    pi = 3.14159
+    return height * pi * radius ** 2
+```
+
+In the example above, radius is set to 5 if that parameter is omitted in a function call. If we call cylinder_volume(10), the function will use 10 as the height and 5 as the radius. However, if we call cylinder_volume(10, 7) the 7 will simply overwrite the default value of 5.
+
+Also notice here we are passing values to our arguments by position. It is possible to pass values in two ways - by position and by name. Each of these function calls are evaluated the same way.
+
+```py
+cylinder_volume(10, 7)  # pass in arguments by position
+cylinder_volume(height=10, radius=7)  # pass in arguments by name
+```
+
+### Variable Scope
+Variable scope refers to which parts of a program a variable can be referenced, or used, from.
+
+It's important to consider scope when using variables in functions. If a variable is created inside a function, it can only be used within that function. Accessing it outside that function is not possible.
+
+```py
+# This will result in an error
+def some_function():
+    word = "hello"
+
+print(word)
+```
+
+In the example above and the example below, word is said to have scope that is only local to each function. This means you can use the same name for different variables that are used in different functions.
+
+```py
+# This works fine
+def some_function():
+    word = "hello"
+
+def another_function():
+    word = "goodbye"
+```
+
+Variables defined outside functions, as in the example below, can still be accessed within a function. Here, word is said to have a **global scope**.
+
+```py
+# This works fine
+word = "hello"
+
+def some_function():
+    print(word)
+
+some_function()
+```
+
+Notice that we can still access the value of the global variable word within this function. However, the value of a global variable can not be modified inside the function. If you want to modify that variable's value inside this function, it should be passed in as an argument. You'll see more on this in the next quiz.
+
+Scope is essential to understanding how information is passed throughout programs in Python and really any programming language.
+**Good practice**: It is best to define variables in the smallest scope they will be needed in. While functions can refer to variables defined in a larger scope, this is very rarely a good idea since you may not know what variables you have defined if your program has a lot of variables.
+
+### Lambda Expressions
+You can use lambda expressions to create anonymous functions. That is, functions that don’t have a name. They are helpful for creating quick functions that aren’t needed later in your code. This can be especially useful for higher order functions, or functions that take in other functions as arguments.
+
+With a lambda expression, this function:
+```py
+def multiply(x, y):
+    return x * y
+```
+
+can be reduced to:
+
+```py
+multiply = lambda x, y: x * y
+```
+Both of these functions are used in the same way. In either case, we can call multiply like this:
+```py
+multiply(4, 7) # = 28
+```
+
+**Components of a Lambda Function**
+
+1. The lambda keyword is used to indicate that this is a lambda expression.
+2. Following lambda are one or more arguments for the anonymous function separated by commas, followed by a colon :. Similar to functions, the way the arguments are named in a lambda expression is arbitrary.
+3. Last is an expression that is evaluated and returned in this function. This is a lot like an expression you might see as a return statement in a function.
+
+With this structure, lambda expressions aren’t ideal for complex functions, but can be very useful for short, simple functions.
