@@ -1067,4 +1067,6 @@ if __name__ == '__main__':
     main()
 ```
 
-****
+**Techniques for Importing Modules**
+
+There are other variants of import statements that are useful in different situations.
