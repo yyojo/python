@@ -349,4 +349,92 @@ print(letters)
 #output: ['a', 'b', 'c', 'd', 'z']
 ```
 
+### Tuples
+A tuple is another useful container. It's a data type for immutable ordered sequences of elements. They are often used to store related pieces of information. Consider this example involving latitude and longitude:
+
+```py
+location = (13.4125, 103.866667)
+print("Latitude:", location[0])
+print("Longitude:", location[1])
 ```
+
+Tuples are similar to lists in that they store an ordered collection of objects which can be accessed by their indices. Unlike lists, however, tuples are immutable - you can't add and remove items from tuples, or sort them in place.
+Tuples can also be used to assign multiple variables in a compact way.
+
+```py
+dimensions = 52, 40, 100
+length, width, height = dimensions
+print("The dimensions are {} x {} x {}".format(length, width, height))
+```
+
+The parentheses are optional when defining tuples, and programmers frequently omit them if parentheses don't clarify the code.
+In the second line, three variables are assigned from the content of the tuple dimensions. This is called tuple unpacking. You can use tuple unpacking to assign the information from a tuple into multiple variables without having to access them one by one and make multiple assignment statements.
+
+### Sets
+A set is a data type for mutable unordered collections of unique elements. One application of a set is to quickly remove duplicates from a list.
+
+```py
+numbers = [1, 2, 6, 3, 1, 1, 6]
+unique_nums = set(numbers)
+print(unique_nums)
+#output: {1, 2, 3, 6}
+```
+
+Sets support the **in** operator the same as lists do. You can add elements to sets using the **add** method, and remove elements using the **pop** method, similar to lists. Although, when you pop an element from a set, a random element is removed. Remember that sets, unlike lists, are unordered so there is no "last element".
+
+```py
+fruit = {"apple", "banana", "orange", "grapefruit"}  # define a set
+
+print("watermelon" in fruit)  # check for element
+
+fruit.add("watermelon")  # add an element
+print(fruit)
+
+print(fruit.pop())  # remove a random element
+print(fruit)
+
+/* outputs:
+False
+{'grapefruit', 'orange', 'watermelon', 'banana', 'apple'}
+grapefruit
+{'orange', 'watermelon', 'banana', 'apple'} */
+```
+
+### Dictionaries and Identity Operators
+A **dictionary** is a mutable data type that stores mappings of unique keys to values. Here's a dictionary that stores elements and their atomic numbers.
+
+```py
+elements = {"hydrogen": 1, "helium": 2, "carbon": 6}
+```
+
+Dictionaries can have keys of any immutable type, like integers or tuples, not just strings. It's not even necessary for every key to have the same type! We can look up values or insert new values in the dictionary using square brackets that enclose the key.
+
+```py
+print(elements["helium"])  # print the value mapped to "helium"
+elements["lithium"] = 3  # insert "lithium" with a value of 3 into the dictionary
+```
+
+We can check whether a value is in a dictionary the same way we check whether a value is in a list or set with the **in** keyword. Dicts have a related method that's also useful, **get**. **get** looks up values in a dictionary, but unlike square brackets, **get** returns None (or a default value of your choice) if the key isn't found.
+
+```py
+print("carbon" in elements) # True
+print(elements.get("dilithium")) # None
+```
+
+Carbon is in the dictionary, so True is printed. Dilithium isn’t in our dictionary so None is returned by get and then printed. If you expect lookups to sometimes fail, get might be a better tool than normal square bracket lookups because errors can crash your program.
+
+**Identity Operators**
+
+* **is** - evaluates if both sides have the same identity
+* **is not** - evaluates if both sides have different identities
+
+```py
+n = elements.get("dilithium")
+print(n is None) # True
+print(n is not None) # False
+```
+
+<img width="791" alt="Screen Shot 2022-08-06 at 11 13 09 AM" src="https://user-images.githubusercontent.com/109002901/183240725-509d8ce6-3fb9-4adf-8a66-2e9c9515f577.png">
+
+* You can use curly braces to define a **set** like this: {1, 2, 3}. However, if you leave the curly braces empty like this: {} Python will instead create an **empty dictionary**. So to create an empty set, use **set()**.
+* A dictionary itself is **mutable**, but each of its individual **keys must be immutable**.
