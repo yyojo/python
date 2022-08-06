@@ -1238,6 +1238,53 @@ Accessing class variable using class name
 dog
 ```
 
+**Constructors**
+
+Constructors are generally used for instantiating an object. The task of constructors is to initialize(assign values) to the data members of the class when an object of the class is created. In Python the **__init__()** method is called the constructor and is always called when an object is created.
+Syntax of constructor declaration : 
+
+```py
+def __init__(self):
+    # body of the constructor
+```
+
+Types of constructors : 
+
+* **default constructor**: The default constructor is a simple constructor which doesn’t accept any arguments. Its definition has only one argument which is a reference to the instance being constructed.
+* **parameterized constructor**: constructor with parameters is known as parameterized constructor. The parameterized constructor takes its first argument as a reference to the instance being constructed known as self and the rest of the arguments are provided by the programmer.
+
+**Destructors**
+
+Destructors are called when an object gets destroyed. In Python, destructors are not needed as much as in C++ because Python has a garbage collector that handles **memory management automatically. **
+The **__del__()** method is a known as a destructor method in Python. It is called when all references to the object have been deleted i.e when an object is garbage collected. 
+Syntax of destructor declaration : 
+
+```py
+def __init__(self):
+    # body of the constructor
+```
+
+Note : A reference to objects is also deleted when the object goes out of reference or when the program ends. 
+
+
+Note : The destructor was called after the program ended or when all the references to object are deleted i.e when the reference count becomes zero, not when object went out of scope.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Iterators and Generators
 ----
 **Iterables** are objects that can return one of their elements at a time, such as a list. Many of the built-in functions we’ve used so far, like 'enumerate,' return an iterator.
