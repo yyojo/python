@@ -324,4 +324,29 @@ There are two things to keep in mind for each of the data types you are using:
 * Are they ordered?
 
 **Order** is about whether the position of an element in the object can be used to access the element. **Both strings and lists are ordered**. We can use the order to access parts of a list and string.
-However, you will see some data types in the next sections that will be unordered. For each of the upcoming data structures you see, it is useful to understand how you index, are they mutable, and are they ordered. Knowing this about the data structure is really useful!
+However, you will see some data types in the next sections that will be unordered. For each of the upcoming data structures you see, it is useful to understand how you index, are they mutable, and are they ordered. 
+
+### List Methods
+Useful Functions for Lists:
+* **len()** returns how many elements are in a list.
+* **max()** returns the greatest element of the list. How the greatest element is determined depends on what type objects are in the list. The maximum element in a list of numbers is the largest number. The maximum elements in a list of strings is element that would occur last if the list were sorted alphabetically. This works because the the max function is defined in terms of the greater than comparison operator. The max function is undefined for lists that contain elements from different, incomparable types.
+* **min()** returns the smallest element in a list. min is the opposite of max, which returns the largest element in a list.
+* **sorted()** returns a copy of a list in order from smallest to largest, leaving the list unchanged.
+* **join()** is a string method that takes a list of strings as an argument, and returns a string consisting of the list elements joined by a separator string.
+
+```py
+name = "-".join(["García", "O'Kelly"])
+print(name)
+# output: García-O'Kelly
+```
+
+* **append()** A helpful method adds an element to the end of a list.
+
+```py
+letters = ['a', 'b', 'c', 'd']
+letters.append('z')
+print(letters)
+#output: ['a', 'b', 'c', 'd', 'z']
+```
+
+```
