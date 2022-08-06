@@ -521,3 +521,5 @@ Hello! */
 * The 'start' argument is the first number of the sequence. If unspecified, 'start' defaults to 0.
 * The 'stop' argument is 1 more than the last number of the sequence. This argument must be specified.
 * The 'step' argument is the difference between each number in the sequence. If unspecified, 'step' defaults to 1.
+
+### Building Dictionaries
