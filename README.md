@@ -1070,3 +1070,45 @@ if __name__ == '__main__':
 **Techniques for Importing Modules**
 
 There are other variants of import statements that are useful in different situations.
+
+1. To import an individual function or class from a module:
+```py
+from module_name import object_name
+```
+
+2. To import multiple individual objects from a module:
+```py
+from module_name import first_object, second_object
+```
+
+3. To rename a module:
+```py
+import module_name as new_name
+```
+
+4. To import an object from a module and rename it:
+```py
+from module_name import object_name as new_name
+```
+
+5. To import every object individually from a module (DO NOT DO THIS):
+```py
+from module_name import *
+```
+
+6. If you really want to use all of the objects from a module, use the standard import module_name statement instead and access each of the objects with the dot notation.
+```py
+import module_name
+```
+
+**Modules, Packages, and Names**
+
+In order to manage the code better, modules in the Python Standard Library are split down into sub-modules that are contained within a **package**. A **package** is simply a module that contains sub-modules. A sub-module is specified with the usual dot notation.
+
+Modules that are submodules are specified by the package name and then the submodule name separated by a dot. You can import the submodule like this.
+
+```py
+import package_name.submodule_name
+```
+
+
