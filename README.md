@@ -473,3 +473,51 @@ elif season == 'winter':
 else:
     print('unrecognized season')
 ```
+
+### For Loops
+Python has two kinds of loops - **for** loops and **while** loops. A for loop is used to "iterate", or do something repeatedly, over an **iterable**.
+
+An **iterable** is an object that can return one of its elements at a time. This can include sequence types, such as strings, lists, and tuples, as well as non-sequence types, such as dictionaries and files.
+
+```py
+cities = ['new york city', 'mountain view', 'chicago', 'los angeles']
+for city in cities: # 
+    print(city)
+print("Done!")
+
+/* output:
+new york city
+mountain view
+chicago
+los angeles
+Done! */
+```
+
+**Components of a for Loop**
+
+1. The first line of the loop starts with the for keyword, which signals that this is a for loop
+2. Following that is city in cities, indicating city is the iteration variable, and cities is the iterable being looped over. In the first iteration of the loop, city gets the value of the first element in cities, which is “new york city”.
+3. The for loop heading line always ends with a colon :
+4. Following the for loop heading is an indented block of code, the body of the loop, to be executed in each iteration of this loop. There is only one line in the body of this loop - print(city).
+5.After the body of the loop has executed, we don't move on to the next line yet; we go back to the for heading line, where the iteration variable takes the value of the next element of the iterable. In the second iteration of the loop above, city takes the value of the next element in cities, which is "mountain view".
+6. This process repeats until the loop has iterated through all the elements of the iterable. Then, we move on to the line that follows the body of the loop - in this case, print("Done!"). We can tell what the next line after the body of the loop is because it is unindented.
+
+**Using the range() Function with for Loops**
+
+**range()** is a built-in function used to create an iterable sequence of numbers. You will frequently use **range()** with a for loop to repeat an action a certain number of times. Any variable can be used to iterate through the numbers, but Python programmers conventionally use i, as in this example:
+
+```py
+for i in range(3):
+    print("Hello!")
+
+/* output:
+Hello!
+Hello!
+Hello! */
+```
+
+**range(start=0, stop, step=1)** The range() function takes three integer arguments, the first and third of which are optional:
+
+* The 'start' argument is the first number of the sequence. If unspecified, 'start' defaults to 0.
+* The 'stop' argument is 1 more than the last number of the sequence. This argument must be specified.
+* The 'step' argument is the difference between each number in the sequence. If unspecified, 'step' defaults to 1.
