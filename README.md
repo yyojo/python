@@ -230,3 +230,67 @@ Or you can search using just key words from the error message or situation you'r
 Adding print statements temporarily into your code can help you see which code lines have been executed before the error occurs, and see the values of any variables that might be important. This approach to debugging can also be helpful even if you're not receiving an error message, but things just aren't working the way you want.
 
 We'll suggest particular occasions to use this approach in upcoming helpful places in this course.
+
+## Data Structures
+----
+### Lists and Membership Operators
+A **list** is one of the most common and basic data structures in Python.
+You saw here that you can create a list with square brackets. Lists can contain any mix and match of the data types you have seen so far.
+
+```py
+list_of_random_things = [1, 3.4, 'a string', True]
+```
+
+This is a list of 4 elements. All ordered containers (like lists) are indexed in python using a starting index of 0. Therefore, to pull the first value from the above list, we can write:
+
+```py
+>>> list_of_random_things[0]
+1
+```
+
+Alternatively, you can index from the end of a list by using negative values, where -1 is the last element, -2 is the second to last element and so on.
+
+```py
+>>> list_of_random_things[-1] 
+True
+>>> list_of_random_things[-2] 
+a string
+```
+
+**Slice and Dice with Lists**
+You saw that we can pull more than one value from a list at a time by using slicing. When using slicing, it is important to remember that the lower index is **inclusive** and the upper index is **exclusive**.
+
+```py
+>>> list_of_random_things = [1, 3.4, 'a string', True]
+>>> list_of_random_things[1:2]
+[3.4]
+```
+If you know that you want to start at the beginning, of the list you can also leave out this value.
+
+```py
+>>> list_of_random_things[:2]
+[1, 3.4]
+```
+
+This type of indexing works exactly the same on strings, where the returned value will be a string.
+
+```py
+>>> list_of_random_things[1:]
+[3.4, 'a string', True]
+```
+
+**in and not in**
+We can also use in and not in to return a bool of whether an element exists within our list, or if one string is a substring of another.
+
+```py
+>>> 'this' in 'this is a string'
+True
+>>> 'in' in 'this is a string'
+True
+>>> 'isa' in 'this is a string'
+False
+>>> 5 not in [1, 2, 3, 4, 6]
+True
+>>> 5 in [1, 2, 3, 4, 6]
+False
+```
