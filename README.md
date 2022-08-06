@@ -846,3 +846,33 @@ multiply(4, 7) # = 28
 3. Last is an expression that is evaluated and returned in this function. This is a lot like an expression you might see as a return statement in a function.
 
 With this structure, lambda expressions aren’t ideal for complex functions, but can be very useful for short, simple functions.
+
+**map()** is a higher-order built-in function that takes a function and iterable as inputs, and returns an iterator that applies the function to each element of the iterable. 
+
+```py
+numbers = [
+              [34, 63, 88, 71, 29],
+              [90, 78, 51, 27, 45],
+              [63, 37, 85, 46, 22],
+              [51, 22, 34, 11, 18]
+           ]
+
+def mean(num_list):
+    return sum(num_list) / len(num_list)
+
+averages = list(map(mean, numbers))
+print(averages)
+
+# with lambda
+averages = list(map(lambda x: sum(x) / len(x), numbers))
+print(averages) # output: [57.0, 58.2, 50.6, 27.2]
+```
+
+**filter()** is a higher-order built-in function that takes a function and iterable as inputs and returns an iterator with the elements from the iterable for which the function returns True.
+
+```py
+cities = ["New York City", "Los Angeles", "Chicago", "Mountain View", "Denver", "Boston"]
+
+short_cities = list(filter(lambda x: len(x) < 10, cities))
+print(short_cities) # output: ['Chicago', 'Denver', 'Boston']
+```
