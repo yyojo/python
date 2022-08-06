@@ -588,3 +588,113 @@ What's happening here?
 ```py
 {'great': 2, 'expectations': 1, 'the': 2, 'adventures': 2, 'of': 2, 'sherlock': 1, 'holmes': 1, 'gasby': 1, 'hamlet': 1, 'huckleberry': 1, 'fin': 1}
 ```
+
+### Iterating Through Dictionaries with For Loops
+When you iterate through a dictionary using a for loop, doing it the normal way (for n in some_dict) will only give you access to the keys in the dictionary - which is what you'd want in some situations. In other cases, you'd want to iterate through both the keys and values in the dictionary. Let's see how this is done in an example. Consider this dictionary that uses names of actors as keys and their characters as values.
+
+```py
+cast = {
+           "Jerry Seinfeld": "Jerry Seinfeld",
+           "Julia Louis-Dreyfus": "Elaine Benes",
+           "Jason Alexander": "George Costanza",
+           "Michael Richards": "Cosmo Kramer"
+       }
+```
+
+Iterating through it in the usual way with a for loop would give you just the keys, as shown below:
+
+```py
+for key in cast:
+    print(key)
+/* outputs:
+Jerry Seinfeld
+Julia Louis-Dreyfus
+Jason Alexander
+Michael Richards */
+```
+
+If you wish to iterate through both keys and values, you can use the built-in method items like this:
+
+```py
+for key, value in cast.items():
+    print("Actor: {}    Role: {}".format(key, value))
+/* outputs:
+Actor: Jerry Seinfeld    Role: Jerry Seinfeld
+Actor: Julia Louis-Dreyfus    Role: Elaine Benes
+Actor: Jason Alexander    Role: George Costanza
+Actor: Michael Richards    Role: Cosmo Kramer
+```
+
+items is a method that returns tuples of key, value pairs, which you can use to iterate over dictionaries in for loops.
+
+### While Loops
+**For** loops are an example of "definite iteration" meaning that the loop's body is run a predefined number of times. This differs from "indefinite iteration" which is when a loop repeats an unknown number of times and ends when some condition is met, which is what happens in a while loop. Here's an example of a **while** loop.
+
+```py
+card_deck = [4, 11, 8, 5, 13, 2, 8, 10]
+hand = []
+
+# adds the last element of the card_deck list to the hand list
+# until the values in hand add up to 17 or more
+while sum(hand)  < 17:
+    hand.append(card_deck.pop())
+```
+
+This example features two new functions. sum returns the sum of the elements in a list, and pop is a list method that removes the last element from a list and returns it.
+
+**Components of a While Loop**
+
+1. The first line starts with the while keyword, indicating this is a while loop.
+2. Following that is a condition to be checked. In this example, that's sum(hand) <= 17.
+3. The while loop heading always ends with a colon :.
+4. Indented after this heading is the body of the while loop. If the condition for the while loop is true, the code lines in the loop's body will be executed.
+5. We then go back to the while heading line, and the condition is evaluated again. This process of checking the condition and then executing the loop repeats until the condition becomes false.
+6. When the condition becomes false, we move on to the line following the body of the loop, which will be unindented.
+
+The indented body of the loop should modify at least one variable in the test condition. If the value of the test condition never changes, the result is an infinite loop.
+
+### Break and Continue
+Sometimes we need more control over when a loop should end, or skip an iteration. In these cases, we use the break and continue keywords, which can be used in both for and while loops.
+
+* **break** terminates a loop
+* **continue** skips one iteration of a loop
+
+### Zip and Enumerate
+**zip** and **enumerate** are useful built-in functions that can come in handy when dealing with loops.
+
+**zip** returns an iterator that combines multiple iterables into one sequence of tuples. Each tuple contains the elements in that position from all the iterables. For example, printing:
+
+list(zip(['a', 'b', 'c'], [1, 2, 3])) would output [('a', 1), ('b', 2), ('c', 3)].
+
+Like we did for range() we need to convert it to a list or iterate through it with a loop to see the elements.
+You could unpack each tuple in a for loop like this.
+
+```py
+letters = ['a', 'b', 'c']
+nums = [1, 2, 3]
+
+for letter, num in zip(letters, nums):
+    print("{}: {}".format(letter, num))
+```
+
+In addition to zipping two lists together, you can also unzip a list into tuples using an asterisk.
+
+```py
+some_list = [('a', 1), ('b', 2), ('c', 3)]
+letters, nums = zip(*some_list)
+```
+This would create the same letters and nums tuples we saw earlier.
+
+**enumerate** is a built in function that returns an iterator of tuples containing indices and values of a list. You'll often use this when you want the index along with each element of an iterable in a loop.
+
+```py
+letters = ['a', 'b', 'c', 'd', 'e']
+for i, letter in enumerate(letters):
+    print(i, letter)
+/* outputs:
+0 a
+1 b
+2 c
+3 d
+4 e */
+```
