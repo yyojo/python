@@ -220,6 +220,7 @@ len()
 ```
 
 **Search for Your Error Message**
+
 Software developers like to share their problems and solutions with each other on the web, so using Google search, or searching in StackOverflow, or searching in Udacity's Knowledge forum are all good ways to get ideas on how to address a particular error message you're getting.
 
 Copy and paste the error message into your web browser search tab, or in Knowledge, and see what others suggest about what might be causing it.
@@ -227,6 +228,7 @@ You can copy and paste the whole error message, with or without quotes around it
 Or you can search using just key words from the error message or situation you're facing, along with some other helpful words that describe your context, like Python and Mac.
 
 **Use Print Statements to Help Debugging**
+
 Adding print statements temporarily into your code can help you see which code lines have been executed before the error occurs, and see the values of any variables that might be important. This approach to debugging can also be helpful even if you're not receiving an error message, but things just aren't working the way you want.
 
 We'll suggest particular occasions to use this approach in upcoming helpful places in this course.
@@ -258,6 +260,7 @@ a string
 ```
 
 **Slice and Dice with Lists**
+
 You saw that we can pull more than one value from a list at a time by using slicing. When using slicing, it is important to remember that the lower index is **inclusive** and the upper index is **exclusive**.
 
 ```py
@@ -280,6 +283,7 @@ This type of indexing works exactly the same on strings, where the returned valu
 ```
 
 **in and not in**
+
 We can also use in and not in to return a bool of whether an element exists within our list, or if one string is a substring of another.
 
 ```py
@@ -296,6 +300,7 @@ False
 ```
 
 **Mutability and Order**
+
 Mutability is about whether or not we can change an object once it has been created. If an object (like a list or string) can be changed (like a list can), then it is called mutable. However, if an object cannot be changed with creating a completely new object (like strings), then the object is considered immutable.
 
 ```py
