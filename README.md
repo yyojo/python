@@ -1112,11 +1112,131 @@ import package_name.submodule_name
 ```
 ## Object - Oriented Programming 
 ----
-### Classes 
+### Classes and Objects
+A **class** is a user-defined blueprint or prototype from which objects are created. Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by their class) for modifying their state.
 
+```py
+# class definition syntax:
+class ClassName:
+    # Statement
+    
+# object definition syntax: 
+obj = ClassName()
+print(obj.atrr)
+```
 
+Class creates a user-defined data structure, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A class is like a blueprint for an object.
 
+Some points on Python class:  
+* Classes are created by keyword class.
+* Attributes are the variables that belong to a class.
+* Attributes are always public and can be accessed using the dot (.) operator. Eg.: Myclass.Myattribute
 
+**Class Objects**
+
+An Object is an instance of a Class. A class is like a blueprint while an instance is a copy of the class with actual values. It’s not an idea anymore, it’s an actual dog, like a dog of breed pug who’s seven years old. You can have many dogs to create many different instances, but without the class as a guide, you would be lost, not knowing what information is required.
+An object consists of : 
+
+* State: It is represented by the attributes of an object. It also reflects the properties of an object.
+* Behavior: It is represented by the methods of an object. It also reflects the response of an object to other objects.
+* Identity: It gives a unique name to an object and enables one object to interact with other objects.
+
+```py
+class Dog:
+ 
+    # A simple class
+    # attribute
+    attr1 = "mammal"
+    attr2 = "dog"
+ 
+    # A sample method
+    def fun(self):
+        print("I'm a", self.attr1)
+        print("I'm a", self.attr2)
+ 
+ 
+# Driver code
+# Object instantiation
+luka = Dog()
+ 
+# Accessing class attributes
+# and method through objects
+print(luka.attr1)
+luka.fun()
+```
+
+**self**
+
+* Class methods must have an extra first parameter in the method definition. We do not give a value for this parameter when we call the method, Python provides it.
+* If we have a method that takes no arguments, then we still have to have one argument.
+* This is similar to this pointer in C++ and this reference in Java.
+
+When we call a method of this object as myobject.method(arg1, arg2), this is automatically converted by Python into MyClass.method(myobject, arg1, arg2) – this is all the special self is about.
+
+**__init__ method**
+
+The __init__ method is similar to constructors in C++ and Java. Constructors are used to initializing the object’s state. Like methods, a constructor also contains a collection of statements(i.e. instructions) that are executed at the time of Object creation. It runs as soon as an object of a class is instantiated. The method is useful to do any initialization you want to do with your object.
+
+```py
+class Dog:
+ 
+    # Class Variable
+    animal = 'dog'
+ 
+    # The init method or constructor
+    def __init__(self, breed, color):
+ 
+        # Instance Variable
+        self.breed = breed
+        self.color = color
+    
+    # A sample method
+    def fun(self):
+        print("I like to play:)
+        print("Let's go for a walk!")
+ 
+ 
+# Objects of Dog class
+Luka = Dog("Pug", "brown")
+Buzo = Dog("Bulldog", "black")
+ 
+print('Luka details:')
+print('Luka is a', Rodger.animal)
+print('Breed: ', Luka.breed)
+print('Color: ', Luka.color)
+ 
+print('\nBuzo details:')
+print('Buzo is a', Buzo.animal)
+print('Breed: ', Buzo.breed)
+print('Color: ', Buzo.color)
+
+Luka.fun()
+ 
+# Class variables can be accessed using class
+# name also
+print("\nAccessing class variable using class name")
+print(Dog.animal)
+```
+
+Output:
+
+```py
+Rodger details:
+Rodger is a dog
+Breed:  Pug
+Color:  brown
+
+Buzo details:
+Buzo is a dog
+Breed:  Bulldog
+Color:  black
+
+I like to play
+Let's go for a walk!
+
+Accessing class variable using class name
+dog
+```
 
 ## Iterators and Generators
 ----
