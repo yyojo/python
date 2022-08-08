@@ -2,7 +2,7 @@ Python Fundamentals
 =================
 
 ## Table of Contents
----
+
 * [Data Types and Operators](#data-types-and-operators)
 * [Data Structures](#data-structures)
 * [Control Flow](#control-flow)
