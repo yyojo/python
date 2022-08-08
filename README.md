@@ -1,25 +1,15 @@
-# Python Fundamentals
-----
-## Table of Contents
+Python Fundamentals
+=================
 
-* [Basics](#basics)
-  * [Program Structure](#program-structure)
-  * [Namespace](#namespace)
-  * [Constants](#constants)
-  * [Enumerated Constants](#enumerated-constants)
-  * [File IO](#file-io)
-  * [Header Files](#header-files)
-  * [User Input](#user-input)
-* [Arithmetic Operations](#arithmetic-operations)
+## Table of Contents
+---
+* [Data Types and Operators](#data-types-and-operators)
+* [Data Structures](#data-structures)
 * [Control Flow](#control-flow)
-  * [Rational Operators](#rational-operators)
-  * [Logic Operators](#logic-operators)
-  * [If-Else Statements](#if-else-statements)
-  * [Switch Statements](#switch-statements)
-  * [For Loops](#for-loops)
-  * [While Loops](#while-loops)
-  * [Break and Continue](#break-and-continue)
-* [Pointers](#pointers)
+* [Scripting](#scripting)
+* [Object - Oriented Programming](#object---oriented-programming)
+* [Iterators and Generators](#iterators-and-generators)
+
 
 ## Data Types and Operators 
 ---
@@ -1728,6 +1718,7 @@ class C(object):
 
 We generally use the class method to create factory methods. Factory methods return class objects ( similar to a constructor ) for different use cases.
 We generally use static methods to create utility functions.
+
 
 ## Iterators and Generators
 ----
